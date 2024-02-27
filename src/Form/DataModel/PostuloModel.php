@@ -21,20 +21,23 @@ class PostuloModel
     #[Assert\Choice(choices: [self::SEARCH_ALTERNANCE, self::SEARCH_CDI], message: 'Choisissez un type de contrat recherché')]
     private ?string $search = self::SEARCH_ALTERNANCE;
 
-    #[Assert\Length(max: 200, maxMessage: '200 caractères maximum')]
-    private ?string $emailContentEnterpriseParaph = DefaultTextConfig::EMAIL_CONTENT_ENTERPRISE_PARAPH;
+    #[Assert\Length(max: 300, maxMessage: '300 caractères maximum')]
+    private ?string $emailContentEnterpriseParaph = null;
     
-    #[Assert\Email('Adresse email invalide')]
+    #[Assert\Email(message: 'Adresse email invalide')]
     #[Assert\Length(max: 200, maxMessage: '200 caractères maximum')]
-    #[Assert\NotBlank('L\'adresse email de l\'entreprise est obligatoire')]
+    #[Assert\NotBlank(message: 'L\'adresse email de l\'entreprise est obligatoire')]
     private ?string $enterpriseEmail = null;
 
     #[Assert\Length(max: 200, maxMessage: '200 caractères maximum')]
-    #[Assert\NotBlank('Le nom de l\'entreprise est obligatoire')]
+    #[Assert\NotBlank(message: 'Le nom de l\'entreprise est obligatoire')]
     private ?string $enterpriseName = null;
 
-    #[Assert\NotBlank('Le paragraphe sur l\'entreprise est obligatoire')]
     #[Assert\Length(max: 200, maxMessage: '200 caractères maximum')]
+    private ?string $enterpriseCity = null;
+
+    #[Assert\NotBlank(message: 'Le paragraphe sur l\'entreprise est obligatoire')]
+    #[Assert\Length(max: 300, maxMessage: '300 caractères maximum')]
     private ?string $motivationLetterEnterpriseParaph = DefaultTextConfig::MOTIVATION_LETTER_ENTERPRISE_PARAPH;
 
     /**
@@ -153,6 +156,26 @@ class PostuloModel
     public function setEmailContentEnterpriseParaph($emailContentEnterpriseParaph)
     {
         $this->emailContentEnterpriseParaph = $emailContentEnterpriseParaph;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of enterpriseCity
+     */ 
+    public function getEnterpriseCity()
+    {
+        return $this->enterpriseCity;
+    }
+
+    /**
+     * Set the value of enterpriseCity
+     *
+     * @return  self
+     */ 
+    public function setEnterpriseCity($enterpriseCity)
+    {
+        $this->enterpriseCity = $enterpriseCity;
 
         return $this;
     }

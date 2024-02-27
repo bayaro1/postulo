@@ -1,7 +1,7 @@
 <?php
 namespace App\Controller;
 
-use App\Email\Security\PostuloEmail;
+use App\Email\PostuloEmail;
 use App\File\MotivationLetter\MotivationLetterCreator;
 use App\File\Pdf\PdfManager;
 use App\Form\DataModel\PostuloModel;
@@ -40,7 +40,7 @@ class PostuloController extends AbstractController
             }
             //on récupére le bon cv d'après les paramètres du form
             $cvFullPath = $this->pdfManager->getPath(
-                $postuloModel->getSearch() . DIRECTORY_SEPARATOR . $postuloModel->getLocalisation(),
+                'cv' . DIRECTORY_SEPARATOR . $postuloModel->getSearch() . DIRECTORY_SEPARATOR . $postuloModel->getLocalisation(),
                 'cv'
             );
             if(!$cvFullPath)

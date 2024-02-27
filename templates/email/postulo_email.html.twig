@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr" style="margin: 0; padding: 0;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidature spontanée</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body style="margin: 0; padding: 0; font-size: 15px; color: rgb(30, 30, 30); font-family: 'Montserrat Alternates', sans-serif; font-weight: 400; font-style: normal;">
+    
+   <div style="max-width: 600px;">
+
+        <div style="margin: 30px 20px;">
+             {% if search == 'search_alternance' %}
+                <h1 style="font-weight: 600; font-size: 1.1rem; margin: 20px 0;">
+                    Candidature spontanée pour une alternance
+                </h1>
+            {% else %}
+                <h1 style="font-weight: 600; font-size: 1.1rem; margin: 20px 0;">
+                    Candidature spontanée pour un poste de développeur web
+                </h1>
+            {% endif %}
+        </div>
+
+        <div style="margin: 30px 20px; line-height: 1.5;">
+            <p>Bonjour,</p>
+            {% if enterpriseParaph %}
+                <p>{{ enterpriseParaph }}</p>
+            {% else %}
+                <p>J'ai découvert votre entreprise avec beaucoup d'intérêt, et je souhaiterai l'intégrer {{ search == 'search_alternance' ? 'en alternance.': '.' }}</p>
+                {% if search == 'search_alternance' %}
+                    <p>En effet, j'ai été retenu pour une formation au titre <strong>Développeur concepteur d'application</strong> à l'école <strong>Ri7</strong> d'Aubagne, qui commence le 15 avril.</p>
+                {% endif %}  
+            {% endif %}
+
+            <p>Jusqu'à présent je me suis formé en autodidacte, via des formations accessibles en ligne et surtout en pratiquant. Je code depuis 2 ans et demi (presque toujours à temps plein).</p>
+        
+            <p>N'hésitez pas à me contacter si vous avez des questions, je serais ravi d'y répondre.</p>
+        </div>
+        
+
+        <div style="margin-top: 50px; margin-bottom: 0; padding: 50px 20px; background-color: rgb(245, 245, 245); font-size: .85em; width: 600px;">
+            <table>
+                <tbody>
+                    <tr>
+                        <td style="font-weight: 600; white-space: nowrap;">Ibai Arotçarena</td>
+                        <td style="padding: 5px 70px; white-space: nowrap;"><span style="color: rgb(100, 100, 100);">Portfolio :</span> <a style="font-weight: 600; color: inherit;"; target="_blank" href="https://iaro.vercel.app">iaro.vercel.app</a>
+                    </tr>
+                    <tr>
+                        <td style="color: rgb(100, 100, 100); white-space: nowrap;">{{ localisation == 'localisation_pelissanne' ? '13330 Pélissanne': 'Aix en Provence' }}</td>
+                        <td style="padding: 5px 70px; white-space: nowrap;">
+                            <a style="text-decoration: none; color: rgb(100, 100, 100);"; target="_blank" href="https://github.com/arotcarena">github.com/arotcarena</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a style="color: rgb(100, 100, 100); white-space: nowrap; text-decoration: none;" target="_blank" href="tel:+33626717650">06 26 71 76 50</a>
+                        </td>
+                        <td style="padding: 5px 70px; white-space: nowrap;">
+                            <a style="color: rgb(100, 100, 100); text-decoration: none; white-space: nowrap;"; target="_blank" href="https://www.linkedin.com/in/ibai-arot%C3%A7arena-247b35266">linkedin.com/ibai-arotcarena</a>
+                        </td>
+                </tbody>
+            </table>
+        </div>
+   </div>
+</body>
+</html>

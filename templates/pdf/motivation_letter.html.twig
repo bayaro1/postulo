@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr" style="width: 210mm; height: 297mm; margin: 0; padding: 0;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lettre de motivation</title>
+</head>
+<body style="width: 210mm; height: 297mm; margin: 0; padding: 0; color: rgb(30, 30, 30); font-family: sans-serif; font-weight: 400; line-height: 1.4;">
+
+    <div style="padding: 30px 50px;">
+        <div style="text-align: left;">
+            <table style="line-height: 1.2;">
+                <tbody>
+                    <tr>
+                        <td style="padding-right: 20px;">Ibai Arotçarena</td>
+                        <td>
+                            <a style="font-weight: 300; color: inherit;" target="_blank" href="mailto:arotcarena.ib@gmail.com">arotcarena.ib@gmail.com</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-right: 20px;">
+                            {{ localisation == 'localisation_pelissanne' ? '13330 Pélissanne': 'Aix en Provence' }}
+                        </td>
+                        <td>
+                            <a style="font-weight: 300; color: inherit;" target="_blank" href="tel:+33626717650">06 26 71 76 50</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="text-align: right; line-height: 1.2;">
+            <div style="margin: 5px 0;">{{ enterpriseName }}</div>
+            {% if enterpriseCity %}
+                <div style="margin: 5px 0;">{{ enterpriseCity }}</div>
+            {% endif %}
+        </div>
+
+        {% if search == 'search_alternance' %}
+            <div style="margin: 30px 0;">
+                OBJET : Candidature spontanée pour une alternance, <strong>titre Concepteur développeur d'application</strong>
+            </div>
+        {% else %}
+            <div style="margin: 30px 0;">
+                OBJET : Candidature spontanée pour un poste de développeur web
+            </div>
+        {% endif %}
+
+
+        <div style="margin-top: 30px;">
+            <p>Madame, Monsieur,</p>
+
+            {% if search == 'search_alternance' %}
+                <p>Je suis actuellement à la recherche d'une entreprise pour effectuer une formation en alternance à l'école <strong>Ri7</strong> à Aubagne (début le 15 avril), en vue d'obtenir le titre RNCP de Concepteur développeur d'application.</p>
+            {% else %}
+                <p>Je suis actuellement à la recherche d'un poste de développeur web.
+            {% endif %}
+        
+            <p>{{ enterpriseParaph }}</p>
+
+            <p>Quant à moi, je me suis formé depuis 2021 en autodidacte. J'ai commencé par apprendre HTML et CSS puis très rapidement PHP, et pendant environ 1 an je me suis concentré sur le backend.<br>J'ai appris et j'ai beaucoup pratiqué le php puis Symfony sur de petits projets d'entraînement, de type blog ou site e-commerce.</p> 
+        
+            <p>Une fois que j'ai eu l'impression de bien maîtriser cette partie, ayant l'envie de dynamiser mes pages, je me suis formé au JavaScript.<br>Cela m'a permis de créer mon premier vrai site, un site vitrine avec interface d'administration, que j'ai fait avec Symfony et du JavaScript basique.</p>
+        
+            <p>A la suite de ça j'ai commencé à utiliser React. Cela a été une découverte incroyable, j'y ai gagné beaucoup de temps bien sûr, et je prends beaucoup de plaisir à coder avec React.<br>Je l'ai donc utilisé pour le front de tous mes projets suivants.</p>
+        
+            <p>Je pense que mon atout principal réside dans le fait que pour moi coder est une passion. Je pratique depuis 2021 quasiment toujours à temps plein, ce qui fait que depuis un certain temps déjà je me sens assez à l'aise, avec la sensation que j'arriverais toujours à me débrouiller d'une manière ou d'une autre pour arriver au résultat souhaité.</p>
+        
+            <p>Et comme je suis également très déterminé et persévérant, et que j'aime le challenge, je pense être en mesure de relever celui que représentera, je le sais, ma première intégration comme développeur dans une entreprise.</p>
+        
+            <p>Veuillez agréer, Madame, Monsieur, l'expression de mes sincères salutations,</p>
+
+            <p>Ibai Arotçarena</p>
+        </div>
+    </div>
+
+</body>
+</html>

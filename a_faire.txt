@@ -1,0 +1,10 @@
+
+
+
+- mettre les 4 cv dans les dossiers appropriés :
+    pdf/cv/search_alternance/localisation_aix/cv.pdf
+                            /localisation_pelissanne/cv.pdf
+          /search_cdi/localisation_aix/cv.pdf
+                     /localisation_pelissanne/cv.pdf
+
+- configurer un vrai smtp

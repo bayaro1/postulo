@@ -8,6 +8,14 @@ html, body {
     height: 100%;
 }
 
+ul {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style-type: none;
+}
+
 body{
     display: flex;
     flex-direction: column;
@@ -16,14 +24,19 @@ body{
 
 .header, .footer {
     height: 70px;
+    flex: none;
     box-shadow: 0 0 4px rgb(185, 185, 185);
     display: flex;
     justify-content: center;
     align-items: center;
 }
+.footer {
+    margin-top: auto;
+}
 .header-title {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 600;
+    color: rgb(91, 56, 218);
 }
 .footer-text {
     font-size: .9em;
@@ -32,7 +45,8 @@ body{
 .container {
     flex: 1 0;
     max-width: 600px;
-    margin: 0 auto;
+    margin: 20px auto 60px;
+    padding: 0 20px;
 }
 
 
@@ -42,14 +56,54 @@ body{
 }
 .form-label {
     margin-bottom: 5px;
+    display: block;
+    font-weight: 600;
 }
 .form-control {
     width: 100%;
     border: solid 1px rgb(225, 225, 225);
     height: 40px;
     border-radius: 4px;
+    padding: 0 10px;
+    font-size: 1em;
 }
 .form-control:focus {
     border: solid 1px rgb(225, 225, 225);
     outline: solid 3px rgb(67, 155, 255);
+}
+
+.form-group textarea {
+    height: 160px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+button {
+    appearance: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+button:hover {
+    outline: none;
+    border: none;
+}
+.submit-group {
+    margin: 40px 0;
+}
+.form-button {
+    height: 65px;
+    padding: 0 25px;
+    background-color: rgb(63, 40, 145);
+    color: #FFF;
+    transition: all .3s;
+    border-radius: 6px;
+    font-size: 1em;
+}
+.form-button:hover {
+    background-color: rgb(88, 57, 201);
+}
+
+.form-error {
+    color: red;
 }

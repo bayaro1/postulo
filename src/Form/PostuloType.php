@@ -30,6 +30,9 @@ class PostuloType extends AbstractType
             ->add('enterpriseName', TextType::class, [
                 'required' => false
             ])
+            ->add('enterpriseCity', TextType::class, [
+                'required' => false
+            ])
             ->add('enterpriseEmail', TextType::class, [
                 'required' => false
             ])
@@ -45,7 +48,7 @@ class PostuloType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => PostuloModel::class
+            'data_class' => PostuloModel::class,
         ]);
     }
 }

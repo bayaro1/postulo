@@ -1,17 +1,14 @@
 <?php
-namespace App\Email\Security;
+namespace App\Email;
 
 use App\Config\DefaultTextConfig;
 use App\Email\EmailFactory;
-use App\File\Pdf\PdfManager;
 use App\Form\DataModel\PostuloModel;
-use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Mime\Email;
-use Twig\Environment;
 
 class PostuloEmail extends EmailFactory
 {
-    public function send(PostuloModel $postuloModel, string $cvFullPath, string $motivationLetterFullPath)
+    public function send(PostuloModel $postuloModel, string $cvFullPath = null, string $motivationLetterFullPath = null)
     {
         $email = (new Email())
             ->from('arotcarena.ib@gmail.com')
@@ -21,14 +18,19 @@ class PostuloEmail extends EmailFactory
             )
             ->text(DefaultTextConfig::EMAIL_CONTENT_TEXT)
             ->html($this->twig->render('email/postulo_email.html.twig', [
-                'email_content_enterprise_paraph' => $postuloModel->getEmailContentEnterpriseParaph(),
+                'enterpriseParaph' => $postuloModel->getEmailContentEnterpriseParaph(),
                 'search' => $postuloModel->getSearch(),
                 'localisation' => $postuloModel->getLocalisation()
             ]));
 
-        $email->attachFromPath($cvFullPath, 'CV Ibai Arotçarena', 'application/pdf')
-                ->attachFromPath($motivationLetterFullPath, 'Lettre de motivation', 'application/pdf')
-                ;
+        if($cvFullPath)
+        {
+            $email->attachFromPath($cvFullPath, 'CV Ibai Arotçarena', 'application/pdf');
+        }
+        if($motivationLetterFullPath)
+        {
+            $email->attachFromPath($motivationLetterFullPath, 'Lettre de motivation', 'application/pdf');
+        }
 
         $this->sendEmail($email);
     }

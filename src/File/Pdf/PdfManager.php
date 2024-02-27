@@ -2,7 +2,9 @@
 namespace App\File\Pdf;
 
 use App\File\FileStorage;
+use Dompdf\CanvasFactory;
 use Dompdf\Dompdf;
+use Dompdf\FontMetrics;
 use Dompdf\Options;
 use Symfony\Component\HttpKernel\KernelInterface;
 
@@ -28,7 +30,6 @@ class PdfManager
     {
         // instantiate and use the dompdf class
         $options = new Options();
-        $options->set('isPhpEnabled', true)
                 ;
         $dompdf = new Dompdf($options);
         $dompdf->loadHtml($html);

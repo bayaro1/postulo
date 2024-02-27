@@ -5,25 +5,33 @@
 
     <h2>Formulaire de candidature</h2>
 
-    <p>Le CV et la lettre de motivation sont adaptés selon les informations que vous allez entrer.</p>
+    <p>Le CV et la lettre de motivation seront adaptés selon les informations que vous allez entrer.</p>
 
     {{ form_start(form) }}
 
-    <div class="form">
+    <div class="form" style="margin-top: 40px;">
 
-        {{ include('form/_form_row', {field: form.search, label: 'Que recherchez-vous ? *'}) }}
+        {{ include('form/_form_row.html.twig', {field: form.search, label: 'Que recherchez-vous ? *'}) }}
 
-        {{ include('form/_form_row', {field: form.localisation, label: 'Votre localisation *'}) }}
+        {{ include('form/_form_row.html.twig', {field: form.localisation, label: 'Votre localisation *'}) }}
 
-        {{ include('form/_form_row', {field: form.enterpriseName, label: 'Nom de l\'entreprise *'}) }}
+        {{ include('form/_form_row.html.twig', {field: form.enterpriseName, label: 'Nom de l\'entreprise *'}) }}
+        
+        {{ include('form/_form_row.html.twig', {field: form.enterpriseCity, label: 'Ville de l\'entreprise'}) }}
 
-        {{ include('form/_form_row', {field: form.enterpriseEmail, label: 'Adresse email de l\'entreprise *'}) }}
+        {{ include('form/_form_row.html.twig', {field: form.enterpriseEmail, label: 'Adresse email de l\'entreprise *'}) }}
 
-        {{ include('form/_form_row', {field: form.emailContentEnterpriseParaph, label: 'Paragraphe sur l\'entreprise (dans le contenu de l\'email)'}) }}
+        {{ include('form/_form_row.html.twig', {field: form.emailContentEnterpriseParaph, label: 'Contenu de l\'email : paragraphe sur l\'entreprise'}) }}
+        <div style="font-size: .85em; margin-top: -10px;">Remplace : j'ai découvert votre entreprise avec un grand intérêt, et je souhaiterai l'intégrer en alternance. (En effet, j'ai été retenu pour une formation au titre Développeur concepteur d'application à l'école Ri7 d'Aubagne, qui commence le 15 avril.)</div>
 
-        {{ include('form/_form_row', {field: form.motivationLetterEnterpriseParaph, label: 'Paragraphe sur l\'entreprise (dans la lettre de motivation) *'}) }}
+        {{ include('form/_form_row.html.twig', {field: form.motivationLetterEnterpriseParaph, label: 'Lettre de motivation : paragraphe sur l\'entreprise *'}) }}
 
-        <button class="form-button">Envoyer ma candidature</button>
+        <div class="form-group submit-group">
+            <button class="form-button">Envoyer ma candidature</button>
+        </div>
     </div>
+
+    
+    {{ form_end(form) }}
 
 {% endblock %}

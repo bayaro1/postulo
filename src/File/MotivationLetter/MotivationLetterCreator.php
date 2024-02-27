@@ -26,12 +26,14 @@ class MotivationLetterCreator
     public function create(PostuloModel $postuloModel): ?string
     {
         $html = $this->environment->render('pdf/motivation_letter.html.twig', [
+            'enterpriseName' => $postuloModel->getEnterpriseName(),
+            'enterpriseCity' => $postuloModel->getEnterpriseCity(),
             'enterpriseParaph' => $postuloModel->getMotivationLetterEnterpriseParaph(),
             'localisation' => $postuloModel->getLocalisation(),
             'search' => $postuloModel->getSearch()
         ]);
 
-        $slug = $this->slugger->slug($postuloModel->getEnterpriseName(), '_', 'fr');
+        $slug = strtolower($this->slugger->slug($postuloModel->getEnterpriseName(), '_', 'fr'));
 
         $this->pdfManager->createFromHtml(
             $html, 
