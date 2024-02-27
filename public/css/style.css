@@ -1,0 +1,55 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    font-size: 17px;
+}
+
+.header, .footer {
+    height: 70px;
+    box-shadow: 0 0 4px rgb(185, 185, 185);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.footer-text {
+    font-size: .9em;
+}
+
+.container {
+    flex: 1 0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+/*form*/
+.form-group {
+    margin: 20px 0;
+}
+.form-label {
+    margin-bottom: 5px;
+}
+.form-control {
+    width: 100%;
+    border: solid 1px rgb(225, 225, 225);
+    height: 40px;
+    border-radius: 4px;
+}
+.form-control:focus {
+    border: solid 1px rgb(225, 225, 225);
+    outline: solid 3px rgb(67, 155, 255);
+}

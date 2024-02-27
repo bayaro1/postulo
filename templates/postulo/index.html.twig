@@ -1,0 +1,29 @@
+{% extends "base.html.twig" %}
+
+
+{% block body %}
+
+    <h2>Formulaire de candidature</h2>
+
+    <p>Le CV et la lettre de motivation sont adaptés selon les informations que vous allez entrer.</p>
+
+    {{ form_start(form) }}
+
+    <div class="form">
+
+        {{ include('form/_form_row', {field: form.search, label: 'Que recherchez-vous ? *'}) }}
+
+        {{ include('form/_form_row', {field: form.localisation, label: 'Votre localisation *'}) }}
+
+        {{ include('form/_form_row', {field: form.enterpriseName, label: 'Nom de l\'entreprise *'}) }}
+
+        {{ include('form/_form_row', {field: form.enterpriseEmail, label: 'Adresse email de l\'entreprise *'}) }}
+
+        {{ include('form/_form_row', {field: form.emailContentEnterpriseParaph, label: 'Paragraphe sur l\'entreprise (dans le contenu de l\'email)'}) }}
+
+        {{ include('form/_form_row', {field: form.motivationLetterEnterpriseParaph, label: 'Paragraphe sur l\'entreprise (dans la lettre de motivation) *'}) }}
+
+        <button class="form-button">Envoyer ma candidature</button>
+    </div>
+
+{% endblock %}
